@@ -2,3 +2,7 @@ site_name: CLIPipe
 theme: readthedocs
 repo_url: https://github.com/TartaricAcid/Mkdocs
 copyright: shang_zhang@foxmail.com
+
+nav:
+    - Home: index.md
+    - About: about.md
