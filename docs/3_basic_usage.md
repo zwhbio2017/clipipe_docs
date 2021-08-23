@@ -1,5 +1,6 @@
 ## Basic Usage
 The basic usage of CLIPipe is:
+
 ```bash
 clipipe ${step_name} -d ${dataset}
 ```
