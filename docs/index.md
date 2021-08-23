@@ -31,5 +31,5 @@ The CLIPipe workflow consists of:
   - [Motif discovery](4_usage.md#motif-discovery)
 - [Copyright and License Information](4_usage.md#copyright-and-license-information)
 - [Citation](#citation)
-- [Tutorial and License](5_copyright_and_license)
+- [Copyright and License](5_copyright_and_license)
 
