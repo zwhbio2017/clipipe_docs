@@ -9,6 +9,7 @@ Welcome to CLIPipe's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+   :myfile.md
 
 
 
