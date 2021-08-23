@@ -8,4 +8,7 @@ nav:
     - Chapter1: 
         - 1.1: 1_chapter/1.1_11content.md
         - 1.2: 1_chapter/1.2_12content.md
+    - Chapter1: 
+        - 1.1: 1_chapter/1.1_11content.md
+        - 1.2: 1_chapter/1.2_12content.md
     - About: about.md
