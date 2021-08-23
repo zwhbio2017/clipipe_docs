@@ -5,4 +5,5 @@ copyright: shang_zhang@foxmail.com
 
 nav:
     - Home: index.md
+    - Chapter1: 1_chapter/
     - About: about.md
