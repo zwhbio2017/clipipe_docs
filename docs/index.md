@@ -10,6 +10,8 @@ The CLIPipe workflow consists of:
 - Pre-processing function:
     - Quality control, remove adapter, filter low quality reads, collpase duplicates, remove barcode of the raw CLIP-seq data.
     <br />
+    <br />
+    <br />
 - Alignment function:
     - mapping sequencing data to reference genome using bowtie, bwa and novoalign
     <br />
