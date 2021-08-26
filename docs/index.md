@@ -12,6 +12,8 @@ The CLIPipe workflow consists of:
     <br />
     <br />
     <br />
+
+    
 - Alignment function:
     - mapping sequencing data to reference genome using bowtie, bwa and novoalign
     <br />
