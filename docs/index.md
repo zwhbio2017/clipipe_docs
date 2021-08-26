@@ -1,6 +1,10 @@
 # CLIPipe
 
-CLIPipe (CLIP-seq Pipeline) is an integrated pipeline for analyzing CLIP sequencing data.
+CLIPipe (CLIP-seq Pipeline) is an integrated pipeline for analyzing CLIP sequencing data, which provides all the commands needed to process protein-RNA CLIP-seq interaction data and to identify and quantify sites of protein-RNA interactions on RNA.
+
+CLIPipe's main input are FASTQ files with CLIP-seq data, its main output are BED files with identified and quantified cross-linked sites.
+
+A number of analyses are included in CLIPipe that provide insights into the properties of protein-RNA interaction.
 
 ![Pipeline of Tutorial](img/CLIPipe_pipeline.png)
 
@@ -28,3 +32,5 @@ The CLIPipe workflow consists of:
 -   [Frequently asked questions](5_faq.md)
 -   [Citation](#citation)
 -   [Copyright and License](6_copyright_and_license.md)
+
+This documentation is for CLIPipe version: 0.0.1.dev

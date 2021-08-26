@@ -1,8 +1,12 @@
 ## Installation
 
-1.  All required software and packages are already installed in docker, so there are no more requirements. you can use the docker image we provide: [CLIPipe Docker Image](https://hub.docker.com/). You can execute to get the docker `CLIPipe_v3` container:
+### Run with Docker
 
-         docker run --name=CLIPipe_v3 -t -d -h CLIPipe_docker --restart unless-stopped -v /lulab/lustre2/zhangshang/work/software/clipipe:/home/CLIPipe_user/clipipe zs/clipipe:v1 /bin/bash
+1.  [Docker](https://www.docker.com/) provides an easy way to run CLIPipe in a working environment that is completely separated from your host machine. All required software and packages are already installed in a ready-to-use image of CLIPipe docker, so there are no more requirements. you can use the docker image we provide: [CLIPipe Docker Image](https://hub.docker.com/). You can execute to get the docker `CLIPipe_v3` container:
+
+         docker run --name=CLIPipe_v3 -t -d -h CLIPipe_docker --restart unless-stopped -v <path-to-clipipe>:/home/CLIPipe_user/clipipe zs/clipipe:v1 /bin/bash
+
+    -   Make sure to create a local folder and provide the path to it. The example above uses a path that may not be applicable to your computer. Both, path to the folder on the host machine and path within the container (`/home/CLIPipe_user/clipipe`), must be absolute.
 
 2.  To show the docker `CLIPipe_v3` container, you can execute:
 
@@ -38,13 +42,16 @@
          A number of analyses are included in CLIPipe that provide insights into the properties of
          protein-RNA interaction.
 
+         optional arguments:
+            -h, --help                show this help message and exit
+            -u, --user_config_file    the user config file
+
          positional arguments:
             {pre_process,mapping,peak_calling}
 
-         optional arguments:
-            -h, --help            show this help message and exit
-            --user_config_file USER_CONFIG_FILE, -u USER_CONFIG_FILE
-                                 the user config file
-
          =======================================================================================================
          For additional help or support, please visit https://github.com/ShangZhang/clipipe
+
+### Use from source
+
+We have hide the details of each step which write by [Snakemake](https://snakemake.readthedocs.io/en/stable/) and you only need to run one single command. However you can use some of the codes if you are familiar with snakemake. The source code is [here](https://github.com/ShangZhang/clipipe).

@@ -2,7 +2,7 @@
 
 The basic usage of CLIPipe is:
 
-```bash    
+```bash
 clipipe ${step_name} -d ${dataset}
 
 # Note:

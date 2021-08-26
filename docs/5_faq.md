@@ -46,7 +46,7 @@ If you want us to add more functions in CLIPipe, please create a [new issue](htt
 
 The most possible cause is no available memory. You can confirm the problem by running the linux command `dmesg` or open and examine the most recent message. Message like "Out of memory: Kill process \*\* or sacrifice child" clearly indicates that memory problem occurred. Some jobs \(e.g. mapping using bwa, samtools sort, bedtools sort\)requires large amount memory especially when the input number of reads is large. Try to reduce the number of parallels with the `-j` option or set memory limit for a particular job if you run the jobs on a computer cluster.
 
-### How to rerun downstream steps from a specific step in a pipeline
+### How to rerun downstream steps from a specific step in a pipeline?
 
 Sometimes we need to rerun a pipeline from a step, usually after changing the configuration file. Snakemake is not aware of changes in configuration file and we need to rerun the pipeline by ourselves. The `--forcerun` option in snakemake allows rerunning a step and all steps that depend on the output files of the step. For example, to rerun the `count_matrix` step, just run:
 
