@@ -7,7 +7,8 @@ cp /home/CLIPipe_user/clipipe/demo/general ${workspace}
 ```
 
 The demo data folder has the following structure:
-```
+
+```text
 ./
 ├── config
 |   ├── default_config.yaml
@@ -19,12 +20,14 @@ The demo data folder has the following structure:
     └── ...
 ```
 
-> **Note:**
-> - `config/user_config.yaml`: configuration file with user defined parameters for each step. 
-> - `config/default_config.yaml`: configuration file with additional detailed parameters for each step. The default file is not supposed to be changed unless you are very clear about what you are doing.
-> - `config/fastq/`: folder of raw CLIP-seq fastq file.
-> - `data/sample_ids.txt`: table of sample name information.
-> - `output/example/`: output folder.
+```text
+Note:
+    `config/user_config.yaml`: configuration file with user defined parameters for each step.
+    `config/default_config.yaml`: configuration file with additional detailed parameters for each step. The default file is not supposed to be changed unless you are very clear about what you are doing.
+    `config/fastq/`: folder of raw CLIP-seq fastq file.
+    `data/sample_ids.txt`: table of sample name information.
+    `output/example/`: output folder.
+```
 
 ### Pre-processing
 
@@ -34,10 +37,12 @@ CLIPipe provides pre process step for raw CLIP-seq data. You needs to set up the
 clipipe -u ./config/user_config.yaml pre_process
 ```
 
-> **Note:**
-> - The output folder `output/fastqc_raw/` contains quality control results of raw CLIP-seq data.
-> - The output folder `output/multiqc_raw/` contains summary of all raw sequencing data quality control results.
-> - The output folders `output/pre_process/` contain the pre process results of raw CLIP-seq data.
+```text
+Note:
+    The output folder `output/fastqc_raw/` contains quality control results of raw CLIP-seq data.
+    The output folder `output/multiqc_raw/` contains summary of all raw sequencing data quality control results.
+    The output folders `output/pre_process/` contain the pre process results of raw CLIP-seq data.
+```
 
 ### Alignment
 
@@ -47,25 +52,28 @@ CLIPipe provides bowtie, bwa and novoalign for mapping CLIP-seq data. You need t
 clipipe -u ./config/user_config.yaml mapping
 ```
 
-> **Note:**
-> - The output folder `output/mapping_bowtie/` contains alignment results using bowtie.
-> - The output folder `output/mapping_bwa/` contains alignment results using bwa.
-> - The output folders `output/mapping_novoalign/` contain alignment results using novoalign.
+```text
+Note:
+    The output folder `output/mapping_bowtie/` contains alignment results using bowtie.
+    The output folder `output/mapping_bwa/` contains alignment results using bwa.
+    The output folders `output/mapping_novoalign/` contain alignment results using novoalign.
+```
 
 ### Peak calling
 
-CLIPipe provides multi peak calling methods for identifying recurring fragments of CLIP-seq data. 
+CLIPipe provides multi peak calling methods for identifying recurring fragments of CLIP-seq data.
 
 ```bash
 clipipe -u ./config/user_config.yaml peak_calling
 ```
 
-> **Note:**
-> - The output folders `output/peak_calling_piranha/` contain alignment results using piranha.
->
-> - The output folder `output/peak_calling_CTK/` contains peak calling results using CTK.
-> - The output folders `output/peak_calling_pureclip/` contain alignment results using pureclip.
-> - The output folders `output/peak_calling_parclip_suite/` contain alignment results using parclip_suite.
+```text
+Note:
+    The output folders `output/peak_calling_piranha/` contain alignment results using piranha.
+    The output folder `output/peak_calling_CTK/` contains peak calling results using CTK.
+    The output folders `output/peak_calling_pureclip/` contain alignment results using pureclip.
+    The output folders `output/peak_calling_parclip_suite/` contain alignment results using parclip_suite.
+```
 
 Other peak calling tools can be used in the CLIPipe docker directily:
 
