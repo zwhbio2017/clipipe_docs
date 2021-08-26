@@ -1,6 +1,6 @@
 ## Installation
 
-1.  All required software and packages are already installed in docker, so there are no more requirements. You can execute to get the docker `CLIPipe_v3` container:
+1.  All required software and packages are already installed in docker, so there are no more requirements. you can use the docker image we provide: [CLIPipe Docker Image](https://hub.docker.com/). You can execute to get the docker `CLIPipe_v3` container:
 
          docker run --name=CLIPipe_v3 -t -d -h CLIPipe_docker --restart unless-stopped -v /lulab/lustre2/zhangshang/work/software/clipipe:/home/CLIPipe_user/clipipe zs/clipipe:v1 /bin/bash
 

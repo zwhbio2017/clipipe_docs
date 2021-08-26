@@ -1,6 +1,6 @@
 # CLIPipe
 
-CLIPipe(CLIP-seq Pipeline) is an integrated pipeline for analyzing CLIP sequencing data.
+CLIPipe (CLIP-seq Pipeline) is an integrated pipeline for analyzing CLIP sequencing data.
 
 ![Pipeline of Tutorial](img/CLIPipe_pipeline.png)
 
@@ -25,6 +25,6 @@ The CLIPipe workflow consists of:
     -   [Alignment](4_usage.md#alignment)
     -   [Peak calling](4_usage.md#peak-calling)
     -   [Motif discovery](4_usage.md#motif-discovery)
--   [Copyright and License Information](4_usage.md#copyright-and-license-information)
+-   [Frequently asked questions](5_faq.md)
 -   [Citation](#citation)
--   [Copyright and License](5_copyright_and_license)
+-   [Copyright and License](6_copyright_and_license.md)

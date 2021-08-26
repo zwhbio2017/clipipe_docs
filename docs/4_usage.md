@@ -29,9 +29,48 @@ Note:
     `output/example/`: output folder.
 ```
 
+### User config file
+The user config file is shown like this:
+```text
+# default config
+default_config_file: /home/CLIPipe_user/clipipe/demo/general/config/default_config.yaml
+
+# basicfigfile paths
+root_dir: /home/CLIPipe_user/clipipe/clipipe_software
+
+reference_dir: /home/CLIPipe_user/clipipe/clipipe_ref/Human
+reference_dir2: /home/CLIPipe_user/clipipe/clipipe_ref2/Human_transcriptome_reference     ##special for parclip_suit software
+
+data_dir: /home/CLIPipe_user/clipipe/demo/general/data
+temp_dir: /home/CLIPipe_user/clipipe/demo/general/temp
+output_dir: /home/CLIPipe_user/clipipe/demo/general/output
+summary_dir: /home/CLIPipe_user/clipipe/demo/general/summary
+
+# general parameters
+threads_compress: 2
+threads_mapping: 6
+
+# pre process parameters
+barcode_length: 1
+paired_end: false
+
+# mapping parameters
+# choose from bowtie bwa and novoalign
+aligner: bwa
+
+adaptor1: AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC
+adaptor2: AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT
+
+# peak calling parameters
+# choose from Piranha, PureCLIP, CLIPper, CTK, MiClip
+peak_caller: CTK
+
+read_length: 100
+```
+
 ### Pre-processing
 
-CLIPipe provides pre process step for raw CLIP-seq data. You needs to set up the `config/user_config.yaml` file correctly. The other parameters for pre process step can be found in `config/default_config.yaml`.
+CLIPipe provides pre-process step for raw CLIP-seq data. You needs to set up the `config/user_config.yaml` file correctly. The other parameters for pre-process step can be found in `config/default_config.yaml`.
 
 ```bash
 clipipe -u ./config/user_config.yaml pre_process
