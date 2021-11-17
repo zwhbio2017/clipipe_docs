@@ -25,7 +25,7 @@ The CLIPipe workflow consists of:
 -   [Installation](2_installation.md)
 -   [Basic Usage](3_basic_usage.md)
 -   [Usage](4_usage.md)
-    -   [Pre-processing](4_usage.md#rre-processing)
+    -   [Pre-processing](4_usage.md#pre-processing)
     -   [Alignment](4_usage.md#alignment)
     -   [Peak calling](4_usage.md#peak-calling)
     -   [Motif discovery](4_usage.md#motif-discovery)
