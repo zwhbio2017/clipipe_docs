@@ -277,13 +277,9 @@ rnamotifs08_motif_finder.pl -positive_seq ${sample_id}.fa -output_dir RNApromo_o
 
 ```
 
+other related tools are provided
+
 ```bash
-# HOMER
-$ homer [data] [parameters] -a [action]
-
-# MEME
-$ meme <dataset> [optional arguments]
-
 # PhyloGibbs
 $ phylogibbs-mp [-m motifwidth] input_seqfile [input_seqfile2 ...]
 
