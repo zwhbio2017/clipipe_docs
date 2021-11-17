@@ -102,23 +102,75 @@ Note:
 
 CLIPipe provides multi peak calling methods for identifying recurring fragments of CLIP-seq data.
 
-|            | nonspecific                | Method-specific |
-| ---------- | -------------------------- | --------------- |
-| HITS-CLIP  | Piranha                    | CTK             |
-| PAR-CLIP   | PARA suite                 |                 |
-| iCLIP      | PureCLIP, iCLIPro,  iCount |                 |
-| iCLAP      | PureCLIP, iCLIPro,  iCount |                 |
-| eCLIP      | PureCLIP, iCLIPro,  iCount |                 |
-| 4sU-iCLIP  | PureCLIP, iCLIPro,  iCount |                 |
-| urea-iCLIP | PureCLIP, iCLIPro,  iCount |                 |
-| BrdU-CLIP  | PureCLIP, iCLIPro,  iCount |                 |
-| Fr-iCLIP   | PureCLIP, iCLIPro,  iCount |                 |
-| FAST-iCLIP | PureCLIP, iCLIPro,  iCount |                 |
-| irCLIP     | PureCLIP, iCLIPro,  iCount |                 |
-| seCLIP     | PureCLIP                   |                 |
-| uvCLAP     | JAMM, PEAKachu             |                 |
-| FLASH      | PureCLIP                   |                 |
-| dCLIP      | PeakRanger                 |                 |
+<table>
+    <tr>
+        <th></th>
+        <th>Method-specific</th>
+        <th>Non-specific</th>
+    </tr>
+    <tr>
+        <td>HITS-CLIP</td>
+        <td>CTK</td>
+        <td rowspan="15">Piranha</td>
+    </tr>
+    <tr>
+        <td>PAR-CLIP</td>
+        <td>PARA suite</td>
+    </tr>
+    <tr>
+        <td>iCLIP</td>
+        <td>PureCLIP, iCLIPro,  iCount</td>
+    </tr>
+    <tr>
+        <td>iCLAP</td>
+        <td>PureCLIP, iCLIPro,  iCount</td>
+    </tr>
+    <tr>
+        <td>eCLIP</td>
+        <td>PureCLIP, iCLIPro,  iCount</td>
+    </tr>
+    <tr>
+        <td>4sU-iCLIP</td>
+        <td>PureCLIP, iCLIPro,  iCount</td>
+    </tr>
+    <tr>
+        <td>urea-iCLIP</td>
+        <td>PureCLIP, iCLIPro,  iCount</td>
+    </tr>
+    <tr>
+        <td>BrdU-CLIP</td>
+        <td>PureCLIP, iCLIPro,  iCount</td>
+    </tr>
+    <tr>
+        <td>Fr-iCLIP</td>
+        <td>PureCLIP, iCLIPro,  iCount</td>
+    </tr>
+    <tr>
+        <td>FAST-iCLIP</td>
+        <td>PureCLIP, iCLIPro,  iCount</td>
+    </tr>
+    <tr>
+        <td>irCLIP</td>
+        <td>PureCLIP, iCLIPro,  iCount</td>
+    </tr>
+    <tr>
+        <td>seCLIP</td>
+        <td>PureCLIP</td>
+    </tr>
+    <tr>
+        <td>uvCLAP</td>
+        <td>JAMM, PEAKachu</td>
+    </tr>
+    <tr>
+        <td>FLASH</td>
+        <td>PureCLIP</td>
+    </tr>
+    <tr>
+        <td>dCLIP</td>
+        <td>PeakRanger</td>
+    </tr>
+</table>
+
 
 ```bash
 clipipe -u ./config/user_config.yaml peak_calling
