@@ -2,12 +2,13 @@
 
 ### Use CLIPipe Docker
 
-#### Prepare reference and demo data
+#### Prepare reference demo and docker
 
 1. Download the reference and demo data to directory, and unzip
 
          mkdir clipipe_test;
          cd clipipe_test;
+         wget ;
          wget ;
          wget ;
          tar -xvzf clipipe_ref.tar.gz;
