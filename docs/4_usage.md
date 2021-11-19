@@ -1,9 +1,19 @@
 ## Usage
 
+### Reference data
+
+You can use the provided reference file to run CLIPipe, defaultly you can choose from Human_hg19 Human_hg38 Mouse_mm10 and Mouse_mm39, you can also create your own reference based on examples we provided
+
+```bash
+ls /home/CLIPipe_user/clipipe/clipipe_ref/
+```
+
+### Demo data
+
 You can use the provided demo data to run CLIPipe:
 
 ```bash
-cp /home/CLIPipe_user/clipipe/demo/general ${workspace}
+cd /home/CLIPipe_user/clipipe/clipipe_demo/general/
 ```
 
 The demo data folder has the following structure:
@@ -33,38 +43,32 @@ Note:
 The user config file is shown like this:
 ```text
 # default config
-default_config_file: /home/CLIPipe_user/clipipe/demo/general/config/default_config.yaml
+default_config_file: /home/CLIPipe_user/clipipe/clipipe_demo/general/config/default_config.yaml
 
-# basicfigfile paths
-root_dir: /home/CLIPipe_user/clipipe/clipipe_software
+# basic config file path
+species: Human_hg38
+reference_dir: /home/CLIPipe_user/clipipe/clipipe_ref
 
-reference_dir: /home/CLIPipe_user/clipipe/clipipe_ref/Human
-reference_dir2: /home/CLIPipe_user/clipipe/clipipe_ref2/Human_transcriptome_reference     ##special for parclip_suit software
-
-data_dir: /home/CLIPipe_user/clipipe/demo/general/data
-temp_dir: /home/CLIPipe_user/clipipe/demo/general/temp
-output_dir: /home/CLIPipe_user/clipipe/demo/general/output
-summary_dir: /home/CLIPipe_user/clipipe/demo/general/summary
+data_dir: /home/CLIPipe_user/clipipe/clipipe_demo/general/data
+temp_dir: /home/CLIPipe_user/clipipe/clipipe_demo/general/temp
+output_dir: /home/CLIPipe_user/clipipe/clipipe_demo/general/output_human_hg38
+summary_dir: /home/CLIPipe_user/clipipe/clipipe_demo/general/summary
 
 # general parameters
 threads_compress: 2
-threads_mapping: 6
+threads_mapping: 4
 
 # pre process parameters
-barcode_length: 1
 paired_end: false
-
-# mapping parameters
-# choose from bowtie bwa and novoalign
-aligner: bwa
-
+barcode_length: 1
 adaptor1: AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC
 adaptor2: AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT
 
-# peak calling parameters
-# choose from Piranha, PureCLIP, CLIPper, CTK, MiClip
-peak_caller: CTK
+# mapping parameters
+aligner: bowtie
 
+# peak calling parameters
+peak_caller: Piranha
 read_length: 100
 ```
 
@@ -73,14 +77,15 @@ read_length: 100
 CLIPipe provides pre-process step for raw CLIP-seq data. You needs to set up the `config/user_config.yaml` file correctly. The other parameters for pre-process step can be found in `config/default_config.yaml`.
 
 ```bash
-clipipe -u ./config/user_config.yaml pre_process
+cd /home/CLIPipe_user/clipipe/clipipe_demo/general/;
+clipipe -u ./config/user_config.yaml pre_process;
 ```
 
 ```text
 Note:
-    The output folder `output/fastqc_raw/` contains quality control results of raw CLIP-seq data.
-    The output folder `output/multiqc_raw/` contains summary of all raw sequencing data quality control results.
-    The output folders `output/pre_process/` contain the pre process results of raw CLIP-seq data.
+    The output folder `output_human_hg38/fastqc_raw/` contains quality control results of raw CLIP-seq data.
+    The output folder `output_human_hg38/multiqc_raw/` contains summary of all raw sequencing data quality control results.
+    The output folders `output_human_hg38/pre_process/` contain the pre process results of raw CLIP-seq data.
 ```
 
 ### Alignment
@@ -88,19 +93,20 @@ Note:
 CLIPipe provides bowtie, bwa and novoalign for mapping CLIP-seq data. You need to set up the alignment tool in the `config/user_config.yaml` file correctly. It is **recommended** to specify the number of threads in `config/user_config.yaml` file by adding `threads_mapping: N`, or you can simply add `-j N` parameter in the CLIPipe command. The other detial parameters for alignment can be found in `config/default_config.yaml`.
 
 ```bash
-clipipe -u ./config/user_config.yaml mapping
+cd /home/CLIPipe_user/clipipe/clipipe_demo/general/;
+clipipe -u ./config/user_config.yaml mapping;
 ```
 
 ```text
 Note:
-    The output folder `output/mapping_bowtie/` contains alignment results using bowtie.
-    The output folder `output/mapping_bwa/` contains alignment results using bwa.
-    The output folders `output/mapping_novoalign/` contain alignment results using novoalign.
+    The output folder `output_human_hg38/mapping_bowtie/` contains alignment results using bowtie.
+    The output folder `output_human_hg38/mapping_bwa/` contains alignment results using bwa.
+    The output folders `output_human_hg38/mapping_novoalign/` contain alignment results using novoalign.
 ```
 
 ### Peak calling
 
-CLIPipe provides multi peak calling methods for identifying recurring fragments of CLIP-seq data.
+CLIPipe provides multiple peak calling methods for identifying recurring fragments of CLIP-seq data.
 
 <table>
     <tr>
@@ -173,15 +179,16 @@ CLIPipe provides multi peak calling methods for identifying recurring fragments 
 
 
 ```bash
-clipipe -u ./config/user_config.yaml peak_calling    # Please choose from Piranha(mapping method: biwtie) CTK(mapping method: novoalign) PureCLIP(mapping method: biwtie) parclip_suite(do not need mapping step)
+cd /home/CLIPipe_user/clipipe/clipipe_demo/general/;
+clipipe -u ./config/user_config.yaml peak_calling;    # Please choose from Piranha(mapping method: biwtie) CTK(mapping method: novoalign) PureCLIP(mapping method: biwtie) parclip_suite(do not need mapping step)
 ```
 
 ```text
 Note:
-    The output folders `output/peak_calling_piranha/` contain alignment results using piranha.
-    The output folder `output/peak_calling_CTK/` contains peak calling results using CTK.
-    The output folders `output/peak_calling_pureclip/` contain alignment results using pureclip.
-    The output folders `output/peak_calling_parclip_suite/` contain alignment results using parclip_suite.
+    The output folders `output_human_hg38/peak_calling_piranha/` contain alignment results using piranha.
+    The output folder `output_human_hg38/peak_calling_CTK/` contains peak calling results using CTK.
+    The output folders `output_human_hg38/peak_calling_pureclip/` contain alignment results using pureclip.
+    The output folders `output_human_hg38/peak_calling_parclip_suite/` contain alignment results using parclip_suite.
 ```
 
 Several peak calling tools can be used in the CLIPipe docker directily:
@@ -216,11 +223,11 @@ For HOMER, the demo script like this:
 # input: ${sample_id}.all_peak.bed
 
 # 1. split training and test dataset
-perl /home/CLIPipe_user/clipipe/clipipe_software/bin/homer/1.split.pl ${sample_id}.all_peak.bed
+perl /home/CLIPipe_user/clipipe2/clipipe_software/bin/homer/1.split.pl ${sample_id}.all_peak.bed
 
 # 2. prepare training and test fasta
-perl /home/CLIPipe_user/clipipe/clipipe_software/bin/homer/2.prepare_Homer.pl ${sample_id} training ${genome_fasta}
-perl /home/CLIPipe_user/clipipe/clipipe_software/bin/homer/2.prepare_Homer.pl ${sample_id} test ${genome_fasta}
+perl /home/CLIPipe_user/clipipe2/clipipe_software/bin/homer/2.prepare_Homer.pl ${sample_id} training ${genome_fasta}
+perl /home/CLIPipe_user/clipipe2/clipipe_software/bin/homer/2.prepare_Homer.pl ${sample_id} test ${genome_fasta}
 
 # 3. Run Homer on training dataset
 findMotifs.pl ${sample_id}.training_peak.fa fasta Homer_training_output -len 4,5,6,7,8,9,10 -rna # the number of len could change
@@ -237,11 +244,11 @@ For MEME, the demo script like this:
 # input: ${sample_id}.all_peak.bed
 
 # 1. split training and test dataset
-perl /home/CLIPipe_user/clipipe/clipipe_software/bin/meme/1.split.pl ${sample_id}.all_peak.bed
+perl /home/CLIPipe_user/clipipe2/clipipe_software/bin/meme/1.split.pl ${sample_id}.all_peak.bed
 
 # 2. prepare training and test fasta
-perl /home/CLIPipe_user/clipipe/clipipe_software/bin/meme/2.prepare_MEME.pl ${sample_id} training ${genome_fasta}
-perl /home/CLIPipe_user/clipipe/clipipe_software/bin/meme/2.prepare_MEME.pl ${sample_id} test ${genome_fasta}
+perl /home/CLIPipe_user/clipipe2/clipipe_software/bin/meme/2.prepare_MEME.pl ${sample_id} training ${genome_fasta}
+perl /home/CLIPipe_user/clipipe2/clipipe_software/bin/meme/2.prepare_MEME.pl ${sample_id} test ${genome_fasta}
 
 # 3. run MEME on training dataset
 mkdir MEME_output
