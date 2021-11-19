@@ -25,11 +25,11 @@
 
     -   Make sure to create a local folder and provide the path to it. The example above uses a path that may not be applicable to your computer. Both, path to the folder on the host machine and path within the container (`/home/CLIPipe_user/clipipe`), must be absolute.
 
-2.  To show the docker `CLIPipe_v3` container, you can execute:
+2.  To show the docker `CLIPipe_1.0.2_test` container, you can execute:
 
          docker container ls
 
-3.  To execute the `CLIPipe_v3` container, you can execute:
+3.  To execute the `CLIPipe_1.0.2_test` container, you can execute:
 
          docker exec -it CLIPipe_1.0.2_test bash
 
