@@ -8,9 +8,9 @@
 
          mkdir clipipe_test;
          cd clipipe_test;
-         wget ;
-         wget ;
-         wget ;
+         wget http://postar.ncrnalab.org/software/clipipe_ref.tar.gz;
+         wget http://postar.ncrnalab.org/software/clipipe_demo.tar.gz;
+         wget http://postar.ncrnalab.org/software/CLIPipe_v1.0.2_.tar.gz;
          tar -xvzf clipipe_ref.tar.gz;
          tar -xvzf clipipe_demo.tar.gz;
 
