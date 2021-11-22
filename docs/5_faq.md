@@ -48,7 +48,7 @@ The most possible cause is no available memory. You can confirm the problem by r
 
 ### How to rerun downstream steps from a specific step in a pipeline?
 
-Sometimes we need to rerun a pipeline from a step, usually after changing the configuration file. Snakemake is not aware of changes in configuration file and we need to rerun the pipeline by ourselves. The `--forcerun` option in snakemake allows rerunning a step and all steps that depend on the output files of the step. For example, to rerun the `count_matrix` step, just run:
+Sometimes we need to rerun a pipeline from a step, usually after changing the configuration file. Snakemake is not aware of changes in configuration file and we need to rerun the pipeline by ourselves. The `--forcerun` option in snakemake allows rerunning a step and all steps that depend on the output files of the step. For example, to rerun the `peak_calling` step, just run:
 
 ```bash
 clipipe peak_calling -d $dataset --forcerun
