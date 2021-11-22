@@ -2,7 +2,7 @@
 
 ### Reference data
 
-You can use the provided reference file to run CLIPipe, defaultly you can choose from Human_hg19 Human_hg38 Mouse_mm10 and Mouse_mm39, you can also create your own reference based on examples we provided
+You can use the provided reference file to run CLIPipe. Defaultly you may choose from hg19/hg38 (Human) or mm10/mm39 (Mouse). You can also create your own reference based on examples we provided.
 
 ```bash
 ls /home/CLIPipe_user/clipipe/clipipe_ref/
@@ -74,7 +74,7 @@ read_length: 100
 
 ### Pre-processing
 
-CLIPipe provides pre-process step for raw CLIP-seq data. You needs to set up the `config/user_config.yaml` file correctly. The other parameters for pre-process step can be found in `config/default_config.yaml`.
+CLIPipe provides pre-process step for raw CLIP-seq data. You need to set up the `config/user_config.yaml` file correctly. The other parameters for pre-process step can be found in `config/default_config.yaml`.
 
 ```bash
 cd /home/CLIPipe_user/clipipe/clipipe_demo/general/;
@@ -191,7 +191,7 @@ Note:
     The output folders `output_human_hg38/peak_calling_parclip_suite/` contain alignment results using parclip_suite.
 ```
 
-Several peak calling tools can be used in the CLIPipe docker directily:
+Several other peak calling tools can be used in the CLIPipe docker directily:
 
 ```bash
 # iCLIPro
@@ -215,7 +215,7 @@ $ clipcontext [-h] [-v] {g2t,t2g,lst,int,exb,eir} ...
 
 ### Motif discovery
 
-The motif discovery function can be used directily in the CLIPipe docker:
+The motif discovery function can be used directly in the CLIPipe docker:
 
 For HOMER, the demo script like this:
 
@@ -260,7 +260,7 @@ fimo --thresh 0.01 -o FIMO_output meme.txt ${sample_id}.test_peak.fa # the numbe
 
 ```
 
-Other related tools are provided
+Other related tools are also provided:
 
 ```bash
 # PhyloGibbs
