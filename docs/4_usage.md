@@ -215,7 +215,7 @@ $ clipcontext [-h] [-v] {g2t,t2g,lst,int,exb,eir} ...
 
 ### Motif discovery
 
-The motif discovery function can be used directly in the CLIPipe docker:
+The motif discovery function can be used directly in the CLIPipe docker. You just need to get the final binding peaks for your data as the input `${sample_id}.all_peak.bed`.
 
 For HOMER, the demo script like this:
 
